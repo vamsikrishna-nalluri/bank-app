@@ -1,0 +1,7 @@
+org/vmc/bank/loan/model/Loans.class
+org/vmc/bank/loan/config/LoanConfig.class
+org/vmc/bank/loan/controller/LoansController.class
+org/vmc/bank/loan/model/Customer.class
+org/vmc/bank/loan/model/Properties.class
+org/vmc/bank/loan/repository/LoansRepository.class
+org/vmc/bank/LoansApplication.class
