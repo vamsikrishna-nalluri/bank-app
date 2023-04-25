@@ -1,7 +1,0 @@
-org/vmc/bank/card/model/Customer.class
-org/vmc/bank/card/config/CardConfig.class
-org/vmc/bank/CardsApplication.class
-org/vmc/bank/card/controller/CardsController.class
-org/vmc/bank/card/model/Properties.class
-org/vmc/bank/card/repository/CardsRepository.class
-org/vmc/bank/card/model/Cards.class
