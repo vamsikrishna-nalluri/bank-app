@@ -5,11 +5,14 @@
     <parent>
         <artifactId>bank-app</artifactId>
         <groupId>org.vmc.bank</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>accounts</artifactId>
+    <packaging>jar</packaging>
+    <name>accounts</name>
+    <version>0.0.1-SNAPSHOT</version>
     <description>Microservice for accounts</description>
     <properties>
         <java.version>17</java.version>

@@ -5,7 +5,7 @@
     <parent>
         <artifactId>bank-app</artifactId>
         <groupId>org.vmc.bank</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -13,6 +13,7 @@
     <groupId>com.eazybytes</groupId>
     <artifactId>loans</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>loans</name>
     <description>Microservice for Loans</description>
 
@@ -69,11 +70,22 @@
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <!-- build packs uses this to build the image - start -->
+                    <!-- build packs website https://buildpacks.io/ -->
+                    <image>
+                        <name>vamckrishna/${project.artifactId}:s4</name>
+                        <env>
+                            <BASE_IMAGE>openjdk:17-jdk-alpine</BASE_IMAGE>
+                            <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                        </env>
+                    </image>
+                    <!-- build packs uses this to build the image - end -->
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>

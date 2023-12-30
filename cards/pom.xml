@@ -5,7 +5,7 @@
     <parent>
         <artifactId>bank-app</artifactId>
         <groupId>org.vmc.bank</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -13,7 +13,8 @@
     <groupId>com.eazybytes</groupId>
     <artifactId>cards</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>loans</name>
+    <name>cards</name>
+    <packaging>jar</packaging>
     <description>Microservice for Loans</description>
 
     <properties>
@@ -76,6 +77,23 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <!-- Added to create a docker image using google jib library - start -->
+            <!-- reference url : https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin -->
+            <!-- command to build docker image is : mvn compile jib:dockerBuild -->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <from>
+                        <image>amazoncorretto:21.0.1</image>
+                    </from>
+                    <to>
+                        <image>vamckrishna/${project.artifactId}:s4</image>
+                    </to>
+                </configuration>
+            </plugin>
+            <!-- Added to create a docker image using google jib library - end -->
         </plugins>
     </build>
 
