@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: accounts
+    description: Accounts Microservice
+  contact-info:
+    name: "Vamsi Krishna Nalluri"
