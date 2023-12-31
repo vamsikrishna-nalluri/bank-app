@@ -1,0 +1,41 @@
+server:
+  port: 8071
+spring:
+  application:
+    name: "configserver"
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+  profiles:
+    active:
+      #- native # This is the profile that tells Spring Cloud Config to serve the config files from the local file system
+      - git # This is the profile that tells Spring Cloud Config to serve the config files from the local file system
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/vamsikrishna-nalluri/bank-app-config.git # This is the location of the config files when using the git profile
+          default-label: master # This is the branch name
+          timeout: 5 # This is the timeout in seconds for cloning/pulling the config files from the git repo
+          clone-on-start: true # This tells Spring Cloud Config to clone the config files from the git repo on startup
+          force-pull: true # This tells Spring Cloud Config to pull the config files from the git repo on startup
+        #native: # This is the location of the config files when using the native profile
+        #  search-locations: classpath:/config # This is the location of the config files when using the native profile
+        #  #search-locations: file:///Users//vamckrishna//Documents//config # This is the location of the config files
+encrypt:
+  key: "A12WER42423345678S6D6F89393HDD224324FG90123456" # This is the key used to encrypt/decrypt the config files
+
+# https://console.hookdeck.com - This is used to create webhooks to notify the config server when the config files are updated in the git repo
+# https://hookdeck.com/docs
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      enabled: true

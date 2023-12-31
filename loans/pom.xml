@@ -21,6 +21,7 @@
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <spring-cloud.version>2022.0.4</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -40,7 +41,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -69,6 +77,18 @@
         </dependency>
     </dependencies>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
@@ -78,13 +98,13 @@
                 <configuration>
                     <!-- build packs uses this to build the image - start -->
                     <!-- build packs website https://buildpacks.io/ -->
-                    <image>
+                    <!--<image>
                         <name>vamckrishna/${project.artifactId}:s4</name>
                         <env>
                             <BASE_IMAGE>openjdk:17-jdk-alpine</BASE_IMAGE>
                             <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                         </env>
-                    </image>
+                    </image>-->
                     <!-- build packs uses this to build the image - end -->
                     <excludes>
                         <exclude>
@@ -92,6 +112,16 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <to>
+                        <image>vamckrishna/${project.artifactId}:s6</image>
+                    </to>
                 </configuration>
             </plugin>
         </plugins>
