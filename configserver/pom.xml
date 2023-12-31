@@ -25,18 +25,6 @@
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
-        </dependency>
-
-        <!-- Add the following dependency -->
-        <!-- This dependency is required to monitor the changes in the config server -->
-        <!-- and refresh the changes in the client microservices -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-monitor</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -66,7 +54,7 @@
                 <version>3.3.2</version>
                 <configuration>
                     <to>
-                        <image>vamckrishna/${project.artifactId}:s6</image>
+                        <image>vamckrishna/${project.artifactId}:s7</image>
                     </to>
                 </configuration>
             </plugin>

@@ -3,11 +3,6 @@ server:
 spring:
   application:
     name: "configserver"
-  rabbitmq:
-    host: rabbitmq
-    port: 5672
-    username: guest
-    password: guest
   profiles:
     active:
       #- native # This is the profile that tells Spring Cloud Config to serve the config files from the local file system
