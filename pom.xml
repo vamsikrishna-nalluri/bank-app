@@ -19,6 +19,7 @@
         <module>cards</module>
         <module>loans</module>
         <module>configserver</module>
+        <module>eurekaserver</module>
     </modules>
 
     <properties>

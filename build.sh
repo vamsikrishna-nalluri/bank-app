@@ -7,3 +7,5 @@ mvn -pl ./loans compile jib:dockerBuild
 mvn -pl ./cards compile jib:dockerBuild
 
 mvn -pl ./configserver compile jib:dockerBuild
+
+mvn -pl ./eurekaserver compile jib:dockerBuild
