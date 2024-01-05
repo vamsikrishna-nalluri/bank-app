@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: gatewayserver
+  config:
+    import: "optional:configserver:http://localhost:8071"
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false # This tells the gateway to use the service registry to find the microservices
+          lower-case-service-id: true # This tells the gateway to use lowercase service IDs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: gatewayserver
+    description: Gateway Server or API gateway or Edge Server Microservice
+    version: 1.0.0
+
+logging:
+  level:
+    com:
+      eazybytes:
+        gatewayserver: DEBUG
