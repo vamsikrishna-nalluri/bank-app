@@ -34,3 +34,12 @@ management:
       probes:
         enabled: true
       enabled: true
+  traces:
+    tags:
+      application: ${spring.application.name}
+  logs:
+    tags:
+      application: ${spring.application.name}
+  metrics:
+    tags:
+      application: ${spring.application.name}

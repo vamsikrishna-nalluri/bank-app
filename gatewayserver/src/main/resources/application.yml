@@ -7,7 +7,7 @@ spring:
     gateway:
       httpclient:
         connect-timeout: 1000
-        response-timeout: 2s
+        response-timeout: 5s
       discovery:
         locator:
           enabled: false # This tells the gateway to use the service registry to find the microservices
@@ -29,7 +29,15 @@ management:
   info:
     env:
       enabled: true
-
+  traces:
+    tags:
+      application: ${spring.application.name}
+  logs:
+    tags:
+      application: ${spring.application.name}
+  metrics:
+    tags:
+      application: ${spring.application.name}
 info:
   app:
     name: gatewayserver

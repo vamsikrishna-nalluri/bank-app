@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=s10
+VERSION=s11
 
 docker image push docker.io/vamckrishna/accounts:"$VERSION"
 docker image push docker.io/vamckrishna/loans:"$VERSION"

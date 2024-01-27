@@ -16,6 +16,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -36,6 +37,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
 @RequiredArgsConstructor
 @Validated
+@Slf4j
 public class CardsController {
 
     private final ICardsService iCardsService;
@@ -94,7 +96,9 @@ public class CardsController {
     public ResponseEntity<CardsDto> fetchCardDetails(@RequestParam
                                                                @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                                String mobileNumber) {
+        log.debug("Inside fetchCardDetails method of CardsController with mobileNumber {}",mobileNumber);
         CardsDto cardsDto = iCardsService.fetchCard(mobileNumber);
+        log.debug("Leaving fetchCardDetails method of CardsController with cardsDto {}",cardsDto);
         return ResponseEntity.status(HttpStatus.OK).body(cardsDto);
     }
 

@@ -1,0 +1,5 @@
+# open telemetry collector config using helm chart
+#       - ./infrastructure/docker/grafana/provisioning:/etc/grafana/provisioning
+#     ports:
+#       - "3000:3000"
+#     depends_on:

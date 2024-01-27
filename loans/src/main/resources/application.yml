@@ -37,7 +37,15 @@ management:
   info:
     env:
       enabled: true
-
+  traces:
+    tags:
+      application: ${spring.application.name}
+  logs:
+    tags:
+      application: ${spring.application.name}
+  metrics:
+    tags:
+      application: ${spring.application.name}
 endpoints:
   shutdown:
     enabled: true
@@ -56,3 +64,11 @@ info:
     name: loans
     description: Loans Microservice
     version: 1.0.0
+
+logging:
+  level:
+    com:
+      eazybytes:
+        loans: DEBUG
+  pattern:
+    level: "%5p %d{yyyy-MM-dd HH:mm:ss} - %msg%n [${spring.application.name},%X{trace_id},%X{span_id}]"
