@@ -12,6 +12,13 @@ spring:
         locator:
           enabled: false # This tells the gateway to use the service registry to find the microservices
           lower-case-service-id: true # This tells the gateway to use lowercase service IDs
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "http://localhost:7080/realms/master/protocol/openid-connect/certs"
+
   data:
     redis:
       connection-timeout: 1000

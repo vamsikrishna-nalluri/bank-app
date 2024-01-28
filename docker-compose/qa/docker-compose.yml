@@ -199,7 +199,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "vamckrishna/configserver:s11"
+    image: "vamckrishna/configserver:s12"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -216,7 +216,7 @@ services:
       OTEL_SERVICE_NAME: "configserver"
 
   eurekaserver:
-    image: "vamckrishna/eurekaserver:s11"
+    image: "vamckrishna/eurekaserver:s12"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -234,7 +234,7 @@ services:
       OTEL_SERVICE_NAME: "eurkaserver"
 
   accounts:
-    image: "vamckrishna/accounts:s11"
+    image: "vamckrishna/accounts:s12"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -252,7 +252,7 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "vamckrishna/loans:s11"
+    image: "vamckrishna/loans:s12"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -270,7 +270,7 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: "vamckrishna/cards:s11"
+    image: "vamckrishna/cards:s12"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -288,7 +288,7 @@ services:
       service: microservice-eureka-config
 
   gatewayserver:
-    image: "vamckrishna/gatewayserver:s11"
+    image: "vamckrishna/gatewayserver:s12"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
