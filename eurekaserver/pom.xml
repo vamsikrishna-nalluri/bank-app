@@ -74,7 +74,7 @@
                 <version>3.3.2</version>
                 <configuration>
                     <to>
-                        <image>vamckrishna/${project.artifactId}:s13</image>
+                        <image>vamckrishna/${project.artifactId}:s14</image>
                     </to>
                 </configuration>
             </plugin>
