@@ -87,6 +87,17 @@
             <version>2.2.0</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+        </dependency>
+
+
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -125,7 +136,7 @@
                 <version>3.3.2</version>
                 <configuration>
                     <to>
-                        <image>vamckrishna/${project.artifactId}:s12</image>
+                        <image>vamckrishna/${project.artifactId}:s13</image>
                     </to>
                 </configuration>
             </plugin>

@@ -21,6 +21,7 @@
         <module>configserver</module>
         <module>eurekaserver</module>
         <module>gatewayserver</module>
+        <module>message</module>
     </modules>
 
     <properties>
